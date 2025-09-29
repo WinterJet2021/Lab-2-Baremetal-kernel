@@ -11,6 +11,8 @@ use bootloader_api::info::{FrameBuffer, PixelFormat, Optional};
 use kernel::serial;
 use noto_sans_mono_bitmap::{get_raster, FontWeight, RasterHeight, RasterizedChar};
 
+
+#[cfg(not(test))]
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     let _ = writeln!(serial(), "PANIC: {info}");
@@ -48,7 +50,7 @@ fn kernel_main(boot_info: &'static mut BootInfo) -> ! {
     clear_fb(fb, RGBA(0, 0, 0, 0));
 
     // ---- Draw “Hello, world!” centered ----
-    const TEXT: &str = "Hello, world!";
+    const TEXT: &str = "Hello, world Tuey!";
     let (tw, th) = text_size(TEXT);
     let info = fb.info();
     let cx = info.width.saturating_sub(tw) / 2;
