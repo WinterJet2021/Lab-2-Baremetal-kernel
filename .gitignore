@@ -1,1 +1,31 @@
-/target
+# Rust / Cargo
+/target/
+/Cargo.lock
+**/*.rs.bk
+
+# Build artifacts
+*.img
+*.bin
+*.iso
+
+# QEMU related
+*.log
+*.qemu
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+/*.code-workspace
+
+# Windows
+*.exe
+*.pdb
+*.dll
+
+# Backup / temp
+*.swp
+*.swo
+*~
